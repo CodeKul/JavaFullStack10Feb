@@ -1,8 +1,4 @@
-package abstraction;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+package abstraction.interfacedemo;
 
 public class Addition  {
 
