@@ -3,14 +3,14 @@ package constructor;
 /**
  * Constructor -> Constructor is special type of function which invoke/call automatically
  * when object of class is created.
- * <p>
- * Rules-> 1. your class name and constructor name should be same.
- * 2. constructor has no return type.
- * 3. static,final,synchronized keywords are not allowed.
- * <p>
+ *
+ * Rules->  1. your class name and constructor name should be same.
+ *          2. constructor has no return type.
+ *          3. static,final,synchronized keywords are not allowed.
+ *
  * Types -> 1. Default constructor
- * 2. parameter constructor
- * <p>
+ *          2. parameter constructor
+ *
  * use => to initiate variable to their default value
  */
 
