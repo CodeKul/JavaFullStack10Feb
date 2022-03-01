@@ -1,5 +1,7 @@
 package finaldemo;
 
+import staticdemo.StaticDemo;
+
 /**
  * final keyword ->
  *  1. final variable - you can not reassign value to variable.
@@ -25,6 +27,7 @@ public final class FinalDemo {
     public static void main(String[] args) {
         FinalDemo obj = new FinalDemo();
         obj.show();
+        StaticDemo.show();
     }
 
 }

@@ -1,10 +1,14 @@
 package staticdemo;
 
-public class StaticDemo {
+public  class StaticDemo {
 
     int id;
     String name;
     static String companyName = "ABC";
+
+    public static void show(){
+        System.out.println("In show");
+    }
 
     public StaticDemo(int id, String name) {
         this.id = id;
@@ -17,5 +21,6 @@ public class StaticDemo {
         StaticDemo obj2 = new StaticDemo(2,"Akash");
         StaticDemo obj3 = new StaticDemo(3,"Suhas");
 
+        StaticDemo.show();
     }
 }
