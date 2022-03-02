@@ -2,6 +2,7 @@ package abstraction.interfacedemo;
 
 public class Calculator implements Operation,Operation2 {
 
+
     @Override
     public void add(int i, int j) {
         System.out.println(i + j);
