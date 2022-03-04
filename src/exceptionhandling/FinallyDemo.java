@@ -15,7 +15,7 @@ public class FinallyDemo {
         } catch (ArithmeticException e) {
             System.out.println("Arithmetic =>" + e.getMessage());
         } finally {
-            int i = 1/0;
+            int i = 1 / 0;
             System.out.println("Hii");
             System.out.println("Hii");
             System.out.println("Hii");
