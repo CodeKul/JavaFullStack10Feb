@@ -9,14 +9,11 @@ public class ArrayDemo {
         int i = 10;
 
         int[] j = new int[5];
-        j[0] = 10;
-        j[1] = 11;
-        j[2] = 13;
-        j[3] = 14;
-        j[4] = 15;
-
-        List<Integer> list = new ArrayList<>();
-
+        j[0] = 10;//0
+        j[1] = 11;//1
+        j[2] = 13;//2
+        j[3] = 14;//3
+        j[4] = 15;//4
 
         System.out.println(j[0]);
 
