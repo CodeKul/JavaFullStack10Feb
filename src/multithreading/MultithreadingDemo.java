@@ -25,7 +25,7 @@ public class MultithreadingDemo extends Thread {
 
 class MultiDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Thread hii = new Thread(()-> {
 
@@ -38,19 +38,24 @@ class MultiDemo {
                     }
                 }
         });
-        hii.start();
 
         Thread hello = new Thread(()-> {
 
-                for (int i = 0; i < 5; i++) {
-                    System.out.println("Hello");
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Hello");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+            }
         });
+
+        hii.start();
         hello.start();
+
+        hii.join();
+        hello.join();
+        System.out.println("Bye");
     }
 }
