@@ -4,7 +4,7 @@ public class ProducerConsumer {
     int i;
 
     boolean flag = true;
-    public void setI(int i){
+    public synchronized void setI(int i){
         if(!flag){
             try {
                 wait();
@@ -18,7 +18,7 @@ public class ProducerConsumer {
         notify();
     }
 
-    public void getI(){
+    public synchronized void getI(){
         if(flag){
             try {
                 wait();
@@ -32,57 +32,32 @@ public class ProducerConsumer {
     }
 }
 
-class Producer implements Runnable{
-
-    ProducerConsumer producerConsumer;
-
-    Producer(ProducerConsumer producerConsumer){
-        this.producerConsumer = producerConsumer;
-    }
-
-    @Override
-    public void run() {
-        int i=0;
-        while (true) {
-            producerConsumer.setI(i++);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
-class Consumer implements Runnable{
-
-    ProducerConsumer producerConsumer;
-
-    Consumer(ProducerConsumer producerConsumer){
-        this.producerConsumer= producerConsumer;
-    }
-    @Override
-    public void run() {
-
-        while (true){
-            producerConsumer.getI();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-
 class Main{
     public static void main(String[] args) {
         ProducerConsumer producerConsumer = new ProducerConsumer();
-        Producer producer = new Producer(producerConsumer);
-        Consumer consumer = new Consumer(producerConsumer);
 
-        Thread t1 = new Thread(producer);
-        Thread t2 = new Thread(consumer);
+        Thread t1 = new Thread(()->{
+            int i=0;
+            while (true) {
+                producerConsumer.setI(i++);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        Thread t2 = new Thread(()->{
+
+            while (true){
+                producerConsumer.getI();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         t1.start();
         t2.start();
     }
