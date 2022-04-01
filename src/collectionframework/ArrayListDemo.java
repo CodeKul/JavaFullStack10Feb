@@ -1,10 +1,13 @@
 package collectionframework;
 
-import multithreading.InterruptDemo;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+//arraylist stores duplicate values
+//arraylist maintains insertion order
+//arraylist uses dynamic array to store element
+//it grows and shrink automatically
 
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -13,6 +16,7 @@ public class ArrayListDemo {
         arr[0] = 90;
         arr[1] = 90;
         arr[2] = 90;
+        System.out.println(arr.length);
 
 
         ArrayList<Employee> list1 = new ArrayList<>();
