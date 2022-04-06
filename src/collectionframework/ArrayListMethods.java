@@ -1,6 +1,7 @@
 package collectionframework;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayListMethods {
@@ -12,6 +13,8 @@ public class ArrayListMethods {
         list1.add(33);
         list1.add(77);
 
+        Collections.sort(list1,Collections.reverseOrder());
+
         List<Integer> list2 = new ArrayList<>();
         list2.add(10);
         list2.add(56);
@@ -20,7 +23,7 @@ public class ArrayListMethods {
 
 //        System.out.println(list1.addAll(list2));
 //        System.out.println(list1.removeAll(list2));
-        System.out.println(list1.retainAll(list2));
+//        System.out.println(list1.retainAll(list2));
         System.out.println(list1);
 
 //        System.out.println(list);

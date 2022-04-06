@@ -1,38 +1,40 @@
 package collectionframework;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.Field;
+import java.util.*;
 
 //arraylist stores duplicate values
 //arraylist maintains insertion order
 //arraylist uses dynamic array to store element
-//it grows and shrink automatically
+//it grows and shrink automatically by 50%
 
 public class ArrayListDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         int[] arr = new int[60];
         arr[0] = 90;
         arr[1] = 90;
         arr[2] = 90;
-        System.out.println(arr.length);
+//        System.out.println(arr.length);
 
 
-        ArrayList<Employee> list1 = new ArrayList<>();
+        Set<Employee> list1 = new HashSet<>();
         Employee employee = new Employee(1,"Ramesh","Pune");
-        Employee employee2 = new Employee(2,"Ramesh","Pune");
-        Employee employee3 = new Employee(3,"Ramesh","Pune");
-        Employee employee4 = new Employee(4,"Ramesh","Pune");
+        Employee employee2 = new Employee(1,"Ramesh","Pune");
+        Employee employee3 = new Employee(1,"Ramesh","Pune");
+        Employee employee4 = new Employee(1,"Ramesh","Pune");
 
         list1.add(employee);
         list1.add(employee2);
         list1.add(employee3);
         list1.add(employee4);
 
-        for (Employee employee1 : list1) {
+        System.out.println(list1);
+
+//        System.out.println(getCapacity(list1));
+      /*  for (Employee employee1 : list1) {
             System.out.println(employee1.id+" "+employee1.name+" "+employee1.address);
-        }
+        }*/
 
 
         List<Integer> list = Arrays.asList(1,2,4,4,5);
@@ -46,7 +48,6 @@ public class ArrayListDemo {
            add(30);
            add(60);
         }};
-
     }
 }
 
