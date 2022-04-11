@@ -2,6 +2,7 @@ package collectionframework;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MapDemo {
     public static void main(String[] args) {
@@ -16,5 +17,8 @@ public class MapDemo {
         });
 //        System.out.println(map);
 
+        for (Integer entry:map.keySet()) {
+            System.out.println(entry+" "+map.get(entry));
+        }
     }
 }
