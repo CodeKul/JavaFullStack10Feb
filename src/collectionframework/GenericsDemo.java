@@ -11,12 +11,19 @@ public class GenericsDemo {
         list.add("Mumbai");
         list.add("nashik");
         listed(list);
+        
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(3);
+        list2.add(3);
+        list2.add(3);
+        list2.add(3);
+        listed(list2);
 
-        List<?> list1 = Arrays.asList(1,2,3,4,'c',"t",9,9.99);
+        List<?> list1 = Arrays.asList(1, 2, 3, 4, 'c', "t", 9, 9.99);
         listed(list1);
     }
 
-    private static void listed(List<?> list){
+    private static void listed(List<?> list) {
         list.forEach(System.out::println);
     }
 }

@@ -4,20 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student> {
 
     int id;
     String name;
     String address;
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
 
     public Student(int id, String name, String address) {
         this.id = id;
@@ -36,19 +27,33 @@ public class Student implements Comparable<Student>{
         list1.add(obj);
 
         Collections.sort(list1);
-        list1.forEach(s->{
+        list1.forEach(s -> {
             System.out.println(s);
         });
-
-
     }
 
-    public static int compare(int x, int y) {
-        return (x < y) ? -1 : ((x == y) ? 0 : 1);
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", address='" + address + '\'' + '}';
     }
 
     @Override
     public int compareTo(Student o) {
-        return compare(this.id, o.id);
+        return this.name.compareTo(o.name);
     }
+/*
+    public static int compare(int x, int y) {
+        return (x < y) ? -1 : ((x == y) ? 0 : 1);
+    }*/
+
+  /*  @Override
+    public int compareTo(Student o) {
+        if (this.id == o.id) {
+            return 0;
+        } else if (this.id > o.id) {
+            return 123;
+        } else {
+            return -1;
+        }
+    }*/
 }
