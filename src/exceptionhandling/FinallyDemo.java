@@ -4,7 +4,6 @@ public class FinallyDemo {
     public static void main(String[] args) {
 
         try {
-//            System.exit(1);
             int i = 10;
             int j = i / 0;
             System.out.println("In first try block");
