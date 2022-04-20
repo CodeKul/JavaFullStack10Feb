@@ -15,11 +15,16 @@ public class JdbcDemo {
 //        System.out.println(connection.isValid(100));
 
         Statement statement = connection.createStatement();
-        String createTable = "create table student(id int,name varchar(25),address varchar(25))";
+//        String createTable = "create table student(id int,name varchar(25),address varchar(25))";
 
-        statement.executeUpdate(createTable);
+        String insert = "insert into student(id,name,address) values(1,'Akash','pune')";
+        String update ="update student set name = 'ravi' where id = 1";
+        String delete = "delete from student where id = 1";
+        String drop ="drop table student";
 
-        System.out.println("table created");
+        int i = statement.executeUpdate(drop);
+
+        System.out.println("record deleted "+i);
 
     }
 }
