@@ -187,3 +187,65 @@ mysql> desc student;
 +---------+-------------+------+-----+---------+-------+
 3 rows in set (0.01 sec)
 
+ use fullstack10feb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> delimiter /
+mysql> create procedure getStudentData()
+    -> BEGIN
+    -> select * from student;
+    -> END;
+    -> /
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call getStduentData();
+    -> /
+ERROR 1305 (42000): PROCEDURE fullstack10feb.getStduentData does not exist
+mysql> call getStudentData();/
++------+---------+---------+
+| id   | name    | address |
++------+---------+---------+
+|    1 | Rahul   | Pune    |
+|    1 | prakash | mumbai  |
++------+---------+---------+
+2 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call getStudentData();/
++------+---------+---------+
+| id   | name    | address |
++------+---------+---------+
+|    1 | Rahul   | Pune    |
+|    1 | prakash | mumbai  |
++------+---------+---------+
+2 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call getStudentData();/
++------+-----------+--------------+
+| id   | name      | address      |
++------+-----------+--------------+
+|    1 | Rahul     | Pune         |
+|    1 | prakash   | mumbai       |
+|    1 | name=> 1  | address=> 1  |
+|    2 | name=> 2  | address=> 2  |
+|    3 | name=> 3  | address=> 3  |
+|    4 | name=> 4  | address=> 4  |
+|    5 | name=> 5  | address=> 5  |
+|    6 | name=> 6  | address=> 6  |
+|    7 | name=> 7  | address=> 7  |
+|    8 | name=> 8  | address=> 8  |
+|    9 | name=> 9  | address=> 9  |
+|   10 | name=> 10 | address=> 10 |
++------+-----------+--------------+
+12 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+
+
