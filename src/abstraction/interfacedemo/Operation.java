@@ -2,7 +2,7 @@ package abstraction.interfacedemo;
 
 public interface Operation {
 
-    void add(int i, int j);
+   public abstract void add(int i, int j);
 
 //    default void display(){
 //        System.out.println("in dispaly");
