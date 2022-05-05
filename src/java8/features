@@ -6,4 +6,4 @@ Method references
 default and static keyword in interface
 stream api
 optional keyword
-LocalDate and localtime
+LocalDate and localtime,LocalDateTime,Period,Duration,Zone
